@@ -1,4 +1,4 @@
-@Library("shared-lib@main") _
+@Library("shared-lib-shashi") _
 
 pipeline {
     agent any
@@ -6,6 +6,7 @@ pipeline {
         stage('Code Checkout') {
             steps {
                 script {
+                  echo ${WORKSPACE}
                   def workingDir = checkoutCode("https://github.com/shashikamle99/my-shared-lib.git", "main")
                   echo $workingDir
                 }
