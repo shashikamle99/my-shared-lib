@@ -1,14 +1,12 @@
-@Library("shared-lib-shashi") _
+@Library(shared-lib-shashi)_
 
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('Code Checkout') {
-            steps {
-                script {
-                  echo ${WORKSPACE}
-                  def workingDir = checkoutCode("https://github.com/shashikamle99/my-shared-lib.git", "main")
-                  echo $workingDir
+    stages{
+        stage('shared-lib-use'){
+            steps{
+                scripts{
+                    calicultor.add(20,30)
                 }
             }
         }
